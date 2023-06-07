@@ -1,0 +1,240 @@
+.header {
+  background: #1104b2;
+  .logo {
+    img {
+      max-width: 200px;
+    }
+  }
+}
+.mobile-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  a {
+    padding: 14px 8px 14px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    &:hover {
+      color: #f1f1f1;
+    }
+  }
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+#mobileMenu-list {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+.sidebar {
+  width: 275px;
+  height: 100vh;
+  position: fixed;
+  padding: 18px 0px;
+  z-index: 9999;
+  box-shadow: 4px 0px 8px -3px rgba(115, 115, 115, 0.75);
+  -webkit-box-shadow: 4px 0px 8px -3px rgba(115, 115, 115, 0.75);
+  -moz-box-shadow: 4px 0px 8px -3px rgba(115, 115, 115, 0.75);
+  .sidemenu-logo {
+    img {
+      max-width: 125px;
+    }
+  }
+  .sidemenu-list {
+    ul {
+      list-style-type: none;
+      padding-top: 40px;
+      border-top: 1px solid #8b81ff;
+      padding-left: 0px;
+      li {
+        text-align: left;
+        &:hover {
+          background-color: #1104b2;
+          a {
+            color: #fff;
+          }
+        }
+        a {
+          padding: 16px 5px 16px 50px;
+          color: #1104b2;
+          text-decoration: none;
+          font-size: 18px;
+          display: block;
+          i {
+            padding-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dashboard-content {
+  .header-area {
+    display: flex;
+    justify-content: end;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    height: 66px;
+    z-index: 999;
+    background-color: #1103b2;
+    position: fixed;
+    width: 100%;
+    .dropdownContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 30px;
+      .dropdown {
+        position: relative;
+        .dropbtn {
+          padding: 0.5rem 1rem 0.5rem 1rem;
+          background-color: transparent;
+          color: #fff;
+          font-weight: 700;
+          border-radius: 0.25rem;
+          border-width: 1px;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          column-gap: 6px;
+          .user {
+            width: 30px;
+          }
+        }
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          z-index: 1;
+          top: 40px;
+          left: 30px;
+          box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+          a {
+            display: block;
+            background-color: white;
+            text-decoration: none;
+            color: black;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            width: 100px;
+            text-align: left;
+            &:hover {
+              background-color: #1104b2;
+              color: #fff;
+            }
+          }
+        }
+        &:hover {
+          .dropdown-content {
+            display: block;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 16px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+.main-content {
+  text-align: left;
+  margin-left: 350px;
+  padding-top: 80px;
+}
+@media only screen and (min-width: 768px) {
+  .mobile-menu,
+  #mobileMenu-list {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .main-content {
+    padding: 20px;
+  }
+  body {
+    margin: 0;
+  }
+  .sidebar {
+    display: none;
+  }
+  .mobile-menu {
+    z-index: 999999;
+    background: #1104b2;
+    .menu-logo {
+      width: 100px;
+      position: absolute;
+      top: 20px;
+      left: 16px;
+    }
+    .divider {
+      border-top: 1px solid #fff;
+      margin-bottom: 20px;
+    }
+    a {
+      color: #fff;
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  #mobileMenu-list {
+    text-align: left;
+    min-height: 26px;
+    background-color: #1104b2;
+    .openbtn {
+      color: #fff;
+      background: transparent;
+    }
+  }
+  .menu-btn {
+    .openbtn {
+      display: none;
+    }
+  }
+  .dashboard-content {
+    .header-area {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: transparent;
+      box-shadow: none;
+      width: auto;
+      height: auto;
+      padding: 12px 0px;
+      .dropdownContainer {
+        padding-right: 10px;
+        .dropdown {
+          .dropbtn {
+            color: #fff;
+            .user {
+              width: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
